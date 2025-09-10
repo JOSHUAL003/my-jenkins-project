@@ -21,10 +21,10 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
-            steps {
-                sh 'docker build -t $DOCKER_IMAGE .'
-            }
+      stage('Docker Build') {
+          steps {
+        sh 'DOCKER_BUILDKIT=0 docker build -t myjenkinsproject:latest .'
+                }
         }
 
         stage('Run & Smoke Test') {
