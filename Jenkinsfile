@@ -12,8 +12,7 @@ pipeline {
    
        stage('Checkout') {
             steps {
-               git branch: 'main', url: https://github.com/JOSHUAL003/my-jenkins-project/
-            }
+		git branch: 'main', url: 'https://github.com/JOSHUAL003/my-jenkins-project.git'            }
         }
 
     stage('Build & Unit test') { 
