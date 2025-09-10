@@ -12,7 +12,7 @@ pipeline {
    
        stage('Checkout') {
             steps {
-               git branch: 'main', url: https://github.com/JOSHUAL003/etc-backup-automation
+               git branch: 'main', url: https://github.com/JOSHUAL003/my-jenkins-project/
             }
         }
 
