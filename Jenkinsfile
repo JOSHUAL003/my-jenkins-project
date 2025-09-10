@@ -30,7 +30,8 @@ pipeline {
         stage('Run & Smoke Test') {
             steps {
                 sh 'docker run -d -p 5000:5000 --name myapp1 $DOCKER_IMAGE'
-                
+                sleep 10
+
                 sh 'curl -f http://localhost:5000/ || (echo "Smoke test failed!" && exit 1)'
             }
         }
