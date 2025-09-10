@@ -24,13 +24,14 @@ pipeline {
       stage('Docker Build') {
           steps {
         sh 'DOCKER_BUILDKIT=0 docker build -t myjenkinsproject:latest .'
+              sleep 60
                 }
         }
 
         stage('Run & Smoke Test') {
             steps {
                 sh 'docker run -d -p 5000:5000 --name myapp1 $DOCKER_IMAGE'
-                sleep 10
+                sleep 100
 
                 sh 'curl -f http://localhost:5000/ || (echo "Smoke test failed!" && exit 1)'
             }
