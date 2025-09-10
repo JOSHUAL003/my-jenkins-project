@@ -13,10 +13,11 @@ pipeline {
             }
         }
 
-        stage('Build & Unit test') {
-            steps {
-                sh 'pip install -r requirements.txt'
-                sh 'pytest --maxfail=1 --disable-warnings -q'
+       stage('Build & Unit test') {
+           steps {
+        sh 'pip install -r requirements.txt'
+        sh 'python3 -m pytest --maxfail=1 --disable-warnings -q'
+    
             }
         }
 
