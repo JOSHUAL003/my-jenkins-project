@@ -40,7 +40,7 @@ pipeline {
 	always {
 		emailtxt (
     subject: '$DEFAULT_SUBJECT',
-    body: "'$DEFAULT_CONTENT',
+    body: '$DEFAULT_CONTENT',
     to: '$DEFAULT_RECEIPIENT',
     attachmentsPattern: 'testFile.*'
 )
