@@ -36,5 +36,15 @@ pipeline {
                 sh 'curl -f http://localhost:5000/ || (echo "Smoke test failed!" && exit 1)'
             }
         }
+        post {
+	always {
+		emailtxt (
+    subject: '$DEFAULT_SUBJECT,
+    body: "'$DEFAULT_CONTENT,
+    to: '$DEFAULT_RECEIPIENT',
+    attachmentsPattern: 'testFile.*'
+)
+}
+}
     }
 }
