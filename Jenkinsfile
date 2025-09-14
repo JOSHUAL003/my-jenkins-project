@@ -37,15 +37,15 @@ pipeline {
             }
         }
 	}
-        post {
-	always {
-		emailtxt (
-    subject: '$DEFAULT_SUBJECT',
-    body: '$DEFAULT_CONTENT',
-    to: '$DEFAULT_RECEIPIENT',
-    attachmentsPattern: 'testFile.*'
-)
-}
+      post {
+    always {
+        emailext(
+            subject: '$DEFAULT_SUBJECT',
+            body: '$DEFAULT_CONTENT',
+            to: '$DEFAULT_RECIPIENTS',
+            attachmentsPattern: 'testFile.*'
+        )
+    }
 }
 
 }
