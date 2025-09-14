@@ -36,6 +36,7 @@ pipeline {
                 sh 'curl -f http://localhost:5000/ || (echo "Smoke test failed!" && exit 1)'
             }
         }
+	}
         post {
 	always {
 		emailtxt (
@@ -46,5 +47,5 @@ pipeline {
 )
 }
 }
-    }
+
 }
